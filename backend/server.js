@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import cors from "cors";
 import fileUpload from "express-fileupload";
 import { v2 as cloudinary } from "cloudinary";
 import cookieParser from "cookie-parser";
@@ -12,6 +13,7 @@ dotenv.config();
 // Middleware to parse JSON
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 
 // File Upload Logic
 app.use(fileUpload({ useTempFiles: true, tempFileDir: "/tmp/" }));

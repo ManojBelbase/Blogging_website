@@ -115,3 +115,20 @@ export const logout = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+export const myProfile = async (req, res) => {
+  try {
+    const user = await req.user;
+    if (!user) {
+      res.status(404).json({ message: "user not found" });
+    }
+    res.status(200).json({ data: user, message: "user profile fetched" });
+  } catch (error) {}
+};
+
+export const getAdmins = async (req, res) => {
+  const admins = await User.find({ role: "admin" });
+  res
+    .status(200)
+    .json({ data: admins, message: "Admins fetched successfully" });
+};

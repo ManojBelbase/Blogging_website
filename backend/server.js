@@ -1,14 +1,17 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import userRoutes from "./routes/user.route.js"; // Adjust the path if necessary
 import fileUpload from "express-fileupload";
 import { v2 as cloudinary } from "cloudinary";
+import cookieParser from "cookie-parser";
+import userRoutes from "./routes/user.route.js"; // Adjust the path if necessary
+import blogRoutes from "./routes/blog.route.js";
 const app = express();
 dotenv.config();
 
 // Middleware to parse JSON
 app.use(express.json());
+app.use(cookieParser());
 
 // File Upload Logic
 app.use(fileUpload({ useTempFiles: true, tempFileDir: "/tmp/" }));
@@ -29,6 +32,7 @@ mongoose
 
 // Defining routes
 app.use("/api/users", userRoutes);
+app.use("/api/blogs", blogRoutes);
 
 //Cloudionary
 cloudinary.config({

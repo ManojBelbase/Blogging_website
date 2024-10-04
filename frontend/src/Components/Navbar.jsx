@@ -28,6 +28,7 @@ const navItems = [
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [isRegister, setIsRegister] = useState(false);
 
   return (
     <nav className="flex relative items-center justify-between py-2 shadow-lg px-6 md:px-16 bg-blue-50">
@@ -57,7 +58,7 @@ const Navbar = () => {
           <Link to="/dashboard">Dashboard</Link>
         </button>
         <button className="outline-none bg-red-700 text-white rounded-md px-4 py-2 text-lg">
-          Logout
+          <Link to="/register">Register</Link>
         </button>
       </div>
 
@@ -71,7 +72,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {showMenu && (
-        <ul className="flex flex-col items-center justify-center gap-3 bg-white w-full h-screen absolute top-10 left-0 ">
+        <ul className="flex flex-col items-center justify-center gap-3 bg-white w-full h-screen absolute top-10 left-0 z-50">
           {navItems.map((nav, i) => (
             <li key={i} className="text-xl">
               <NavLink
@@ -90,7 +91,7 @@ const Navbar = () => {
               <Link to="/dashboard">Dashboard</Link>
             </button>
             <button className="outline-none bg-red-700 text-white rounded-md px-4 py-2 text-lg">
-              Logout
+              <Link to="/register">Register</Link>
             </button>
           </div>
         </ul>

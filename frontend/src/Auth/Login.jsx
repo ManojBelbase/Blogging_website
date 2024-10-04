@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [role, setRole] = useState("");
@@ -27,7 +27,10 @@ const Login = () => {
     try {
       const response = await axios.post(
         "http://localhost:4000/api/users/login",
-        formData
+        formData,
+        {
+          withCredentials: true,
+        }
       );
 
       if (response.status === 200) {
@@ -95,6 +98,12 @@ const Login = () => {
               className="w-full p-2 outline-none border-2 rounded-md"
             />
           </div>
+          <p className="text-center mb-2">
+            New User?
+            <Link to="/register" className="text-blue-600">
+              Register Now
+            </Link>
+          </p>
 
           {/* Submit Button */}
           <button

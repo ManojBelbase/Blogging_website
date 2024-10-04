@@ -9,11 +9,8 @@ import Creater from "./Pages/Creater";
 import Dashboard from "./Pages/Dashboard";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
-import { useAuth } from "./context/AuthProvider";
 import { Toaster } from "react-hot-toast";
 function App() {
-  const { blogs } = useAuth();
-  console.log(blogs.data);
   return (
     <div>
       <Routes>

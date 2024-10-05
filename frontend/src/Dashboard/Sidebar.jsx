@@ -30,6 +30,7 @@ const Sidebar = ({ setComponent }) => {
         );
         setIsAuthenticated(false);
         toast.success("User Logout Successfully");
+        navigate("/");
       } catch (error) {
         toast.error("Failed to logout");
       }
@@ -48,7 +49,7 @@ const Sidebar = ({ setComponent }) => {
       </div>
       {/* sidebar */}
       <div
-        className={`w-56 relative border h-screen pt-7 shadow-lg transform transition duration-300 ${
+        className={`w-56 relative border h-screen pt-7 shadow-lg transform transition duration-300 z-30 ${
           show ? "hidden" : "block"
         }
         } bg-blue-50`}
@@ -72,37 +73,32 @@ const Sidebar = ({ setComponent }) => {
           <div className="mt-7 flex flex-col gap-4">
             <button
               onClick={() => handleComponent("My Profile")}
-              className="px-8 uppercase bg-blue-600 text-white py-1 outline-none rounded-md border-none border-2"
+              className="px-4 uppercase py-1 outline-none rounded-md border-black text-black border-2"
             >
               My Profile
             </button>
             <button
               onClick={() => handleComponent("My Blogs")}
-              className="px-8 uppercase bg-green-600 text-white py-1 outline-none rounded-md border-none border-2"
+              className="px-8 uppercase border-black text-black py-1 outline-none rounded-md  border-2"
             >
               My Blogs
             </button>
             <button
               onClick={() => handleComponent("Create Blog")}
-              className="px-8 py-1 uppercase border-2 bg-purple-700 text-white border-none outline-none rounded-md"
+              className="px-8 py-1 uppercase border-2 border-black text-black outline-none rounded-md"
             >
               Create Blogs
             </button>
-            <button
-              onClick={() => handleComponent("Update Blog")}
-              className="px-8 py-1 uppercase border-2 bg-pink-700 text-white border-none outline-none rounded-md"
-            >
-              Update Blogs
-            </button>
+
             <button
               onClick={GotoHome}
-              className="px-8 py-1 uppercase border-2 bg-yellow-500 text-white border-none outline-none rounded-md"
+              className="px-8 py-1 uppercase border-2 border-black text-black outline-none rounded-md"
             >
               Home
             </button>
             <button
               onClick={handleLogout}
-              className="px-8 py-1 uppercase border-2 bg-red-700 text-white border-none outline-none rounded-md"
+              className="px-8 py-1 uppercase border-2 border-black text-black  outline-none rounded-md"
             >
               Logout
             </button>

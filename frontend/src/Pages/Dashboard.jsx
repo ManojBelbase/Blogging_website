@@ -11,14 +11,12 @@ const Dashboard = () => {
   const [component, setComponent] = useState("My Blog");
   return (
     <div>
-      <div>
+      <div className="">
         <Sidebar component={component} setComponent={setComponent} />
         {component === "My Profile" ? (
-          <MyProfile profile={profile}/>
+          <MyProfile profile={profile} />
         ) : component === "Create Blog" ? (
           <CreateBlogs />
-        ) : component === "Update Blog" ? (
-          <UpdateBlog />
         ) : (
           <MyBlogs />
         )}

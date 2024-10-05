@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
 
 const Login = () => {
   const [role, setRole] = useState("");
@@ -9,6 +10,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
 
   const navigate = useNavigate();
+  const { isAuthenticated, setIsAuthenticated } = useAuth();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -35,9 +37,10 @@ const Login = () => {
 
       if (response.status === 200) {
         toast.success("User logged in successfully");
-
+        setIsAuthenticated(true);
         // Navigate to the home page after successful login
         navigate("/");
+        location.reload();
       }
 
       // Clear form fields

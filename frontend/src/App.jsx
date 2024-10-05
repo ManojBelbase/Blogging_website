@@ -10,6 +10,8 @@ import Dashboard from "./Pages/Dashboard";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 import { Toaster } from "react-hot-toast";
+import UpdateBlog from "./Dashboard/UpdateBlog";
+import BlogDetails from "./Home/BlogDetails";
 function App() {
   return (
     <div>
@@ -20,8 +22,12 @@ function App() {
           <Route path="creators" element={<Creater />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="/blog/details/:id" element={<BlogDetails />} />
         </Route>
+
         <Route path="dashboard" element={<Dashboard />} />
+        {/* Update Blog route */}
+        <Route path="/blog/update/:id" element={<UpdateBlog />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

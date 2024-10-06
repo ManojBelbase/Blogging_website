@@ -18,7 +18,7 @@ const Tech = () => {
               className="mr-4 border bg-white border-gray-200 rounded-md hover:shadow-lg overflow-hidden transform hover:scale-105 duration-300"
               key={blog._id}
             >
-              <Link to="/">
+              <Link to={`/blog/details/${blog._id}`}>
                 <div className="group relative h-48">
                   <img
                     src={blog?.blogImage?.url}

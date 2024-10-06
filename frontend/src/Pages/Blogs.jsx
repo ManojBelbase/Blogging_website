@@ -118,7 +118,9 @@ const Blogs = () => {
                       <p>
                         {new Date(blog.createdAt).toISOString().split("T")[0]}
                       </p>
-                      <p className="font-light">{blog.category}</p>
+                      <p className="font-light text-blue-600">
+                        {blog.category}
+                      </p>
                     </div>
                   ) : (
                     <p className="font-extralight text-gray-600 text-base">

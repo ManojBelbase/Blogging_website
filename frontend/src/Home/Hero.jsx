@@ -10,7 +10,7 @@ const Hero = () => {
       {blogs && blogs.data && blogs.data.length > 0 ? (
         blogs.data.slice(0, 4).map((blog) => (
           <Link
-            to="/"
+            to={`/blog/details/${blog._id}`}
             key={blog._id}
             className="bg-white rounded-md hover:shadow-lg overflow-hidden border transform hover:scale-105 duration-300"
           >

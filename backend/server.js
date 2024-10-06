@@ -27,8 +27,8 @@ app.use(
 app.use(fileUpload({ useTempFiles: true, tempFileDir: "/tmp/" }));
 
 const PORT = process.env.PORT || 4000;
-// const MONGO_URL = process.env.MONGO_URI;
-const MONGO_URL = process.env.MONGO_URI_LOCAL;
+const MONGO_URL = process.env.MONGO_URI;
+// const MONGO_URL = process.env.MONGO_URI_LOCAL;
 
 // DB Connection
 mongoose

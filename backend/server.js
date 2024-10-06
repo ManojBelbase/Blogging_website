@@ -18,9 +18,9 @@ app.use(cookieParser());
 // CORS configuration
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL, // Use your frontend URL
+    origin: ["http://localhost:5173", "https://bloggingsite-smoky.vercel.app"], // Allow both origins
     credentials: true, // Allow credentials to be included
-    methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed methods
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 

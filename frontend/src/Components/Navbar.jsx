@@ -37,7 +37,6 @@ const Navbar = () => {
   const { profile, isAuthenticated, setIsAuthenticated } = useAuth(); // Access logout method from AuthProvider
   const navigate = useNavigate(); // To programmatically navigate
 
-  console.log(profile);
   // Logout
   const handleLogout = (e) => {
     e.preventDefault();

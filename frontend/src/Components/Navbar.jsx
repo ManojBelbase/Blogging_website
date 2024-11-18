@@ -75,7 +75,9 @@ const Navbar = () => {
   return (
     <nav className="flex relative items-center justify-between py-2 shadow-lg px-6 md:px-16 bg-blue-50">
       <div>
-        <p className="text-xl font-semibold">Logo</p>
+        <p className="text-xl font-semibold">
+          Neplai<span className="text-blue-600">Blog</span>
+        </p>
       </div>
 
       {/* Desktop Menu */}

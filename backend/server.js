@@ -18,7 +18,7 @@ app.use(cookieParser());
 // CORS configuration
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://bloggingsite-smoky.vercel.app"], // Allow both origins
+    origin: ["http://localhost:5173", process.env.FRONTEND_URL], // Allow both origins
     credentials: true, // Allow credentials to be included
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
